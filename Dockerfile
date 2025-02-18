@@ -19,6 +19,6 @@ RUN wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.d
     rm -f google-chrome*.deb
 # Install chromedriver
 RUN wget https://chromedriver.storage.googleapis.com/113.0.5672.63/chromedriver_linux64.zip && \
-    unzip chromedriver_linux64.zip && \
-    chmod +x /driver/chromedriver && \
+    unzip chromedriver_linux64.zip && mkdir -p /driver && \
+    mv chromedriver /driver/ && chmod +x /driver/chromedriver && \
     rm -rf chromedriver_*
